@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "research-leakproof",
+  "displayName": "leakproof",
+  "version": "0.1.0",
+  "description": "Catch data leakage, inflated sample size, shape-collapse, and over-claimed metrics in any ML or research project, without leaving Claude Code.",
+  "author": {
+    "name": "Bishal Shrestha",
+    "url": "https://github.com/OfficialBishal"
+  },
+  "homepage": "https://github.com/OfficialBishal/research-leakproof#readme",
+  "repository": "https://github.com/OfficialBishal/research-leakproof",
+  "license": "MIT",
+  "keywords": [
+    "machine-learning",
+    "research",
+    "reproducibility",
+    "data-leakage",
+    "statistics",
+    "linter",
+    "ci"
+  ]
+}

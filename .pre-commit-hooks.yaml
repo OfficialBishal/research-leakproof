@@ -1,0 +1,7 @@
+- id: leakproof-scan
+  name: leakproof leakage scan
+  description: Flag preprocessing fit on the full dataset before the train/test split.
+  entry: leakproof scan
+  language: python
+  types: [python]
+  require_serial: true
