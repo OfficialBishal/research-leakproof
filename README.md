@@ -6,6 +6,8 @@ plugin and as a small Python library, on any field's data.
 
 ![license](https://img.shields.io/badge/license-MIT-blue) ![python](https://img.shields.io/badge/python-3.9%2B-blue)
 
+<p align="center"><img src="assets/demo.svg" alt="leakproof demo report" width="760"></p>
+
 Experiment trackers (Weights & Biases, MLflow, DVC) record *what* you ran. They do not tell you the
 test set leaked into training, that your 14,000 "samples" are 500 rows copied 28 times, or that a
 headline correlation collapses to nothing once you look within each subject. `research-leakproof`
@@ -148,6 +150,10 @@ Or copy `.github/workflows/ci.yml` to run `pytest` and `leakproof scan` on every
 | **research-leakproof** | no | **yes** | **yes** | **yes** |
 
 They are complementary: track with one, validate with this.
+
+## Star history
+
+[![Star History Chart](https://api.star-history.com/svg?repos=OfficialBishal/research-leakproof&type=Date)](https://star-history.com/#OfficialBishal/research-leakproof&Date)
 
 ## License
 
