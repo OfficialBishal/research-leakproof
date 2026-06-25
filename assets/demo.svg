@@ -1,18 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="811" height="280" viewBox="0 0 811 280" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
-<rect width="811" height="280" rx="10" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="811" height="301" viewBox="0 0 811 301" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
+<style>text{animation:fin .45s backwards}@keyframes fin{from{opacity:0}to{opacity:1}}</style>
+<rect width="811" height="301" rx="10" fill="#0d1117"/>
 <rect width="811" height="34" rx="10" fill="#161b22"/>
 <rect y="24" width="811" height="10" fill="#161b22"/>
 <circle cx="20" cy="17" r="6" fill="#ff5f56"/>
 <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
 <circle cx="60" cy="17" r="6" fill="#27c93f"/>
-<text x="405.5" y="22" fill="#8b949e" font-size="12" text-anchor="middle">leakproof demo</text>
-<text x="18" y="65" fill="#ff6b6b" font-size="13" xml:space="preserve">[x] split_leakage: 2 test row(s) are identical to training rows (4.8% of test)</text>
-<text x="18" y="86" fill="#ff6b6b" font-size="13" xml:space="preserve">[x] group_leakage: 1 group(s) appear in both train and test</text>
-<text x="18" y="107" fill="#ff6b6b" font-size="13" xml:space="preserve">[x] shape_collapse: Aggregate r=0.95, but predictions barely vary within a unit</text>
-<text x="18" y="128" fill="#e6b450" font-size="13" xml:space="preserve">[!] temporal_leakage: 10 training point(s) fall at or after the test period begins</text>
-<text x="18" y="149" fill="#e6b450" font-size="13" xml:space="preserve">[!] effective_n: Effective sample size is ~8.0x smaller than the reported count (repeated groups)</text>
-<text x="18" y="170" fill="#e6b450" font-size="13" xml:space="preserve">[!] metric_honesty: A correlation metric is reported without an error metric</text>
-<text x="18" y="191" fill="#e6b450" font-size="13" xml:space="preserve">[!] power: Underpowered: claimed effect r=0.10 is below the detectable floor r=0.42 at n=42</text>
-<text x="18" y="212" fill="#e6b450" font-size="13" xml:space="preserve">[!] multiple_comparisons: 12 comparisons reported with no multiple-testing correction</text>
-<text x="18" y="254" fill="#8b949e" font-size="13" xml:space="preserve">3 error   5 warn   0 info   0 ok</text>
+<text x="405.5" y="22" fill="#8b949e" font-size="12" text-anchor="middle" style="animation:none">research-leakproof</text>
+<text x="18" y="65" font-size="13" style="animation-delay:.1s"><tspan fill="#7ee787">$</tspan><tspan fill="#c9d1d9"> leakproof demo</tspan></text>
+<text x="18" y="86" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.55s">[x] split_leakage: 2 test row(s) are identical to training rows (4.8% of test)</text>
+<text x="18" y="107" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.73s">[x] group_leakage: 1 group(s) appear in both train and test</text>
+<text x="18" y="128" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.91s">[x] shape_collapse: Aggregate r=0.95, but predictions barely vary within a unit</text>
+<text x="18" y="149" fill="#e6b450" font-size="13" xml:space="preserve" style="animation-delay:1.09s">[!] temporal_leakage: 10 training point(s) fall at or after the test period begins</text>
+<text x="18" y="170" fill="#e6b450" font-size="13" xml:space="preserve" style="animation-delay:1.27s">[!] effective_n: Effective sample size is ~8.0x smaller than the reported count (repeated groups)</text>
+<text x="18" y="191" fill="#e6b450" font-size="13" xml:space="preserve" style="animation-delay:1.45s">[!] metric_honesty: A correlation metric is reported without an error metric</text>
+<text x="18" y="212" fill="#e6b450" font-size="13" xml:space="preserve" style="animation-delay:1.63s">[!] power: Underpowered: claimed effect r=0.10 is below the detectable floor r=0.42 at n=42</text>
+<text x="18" y="233" fill="#e6b450" font-size="13" xml:space="preserve" style="animation-delay:1.81s">[!] multiple_comparisons: 12 comparisons reported with no multiple-testing correction</text>
+<text x="18" y="275" fill="#8b949e" font-size="13" xml:space="preserve" style="animation-delay:1.99s">3 error   5 warn   0 info   0 ok</text>
 </svg>

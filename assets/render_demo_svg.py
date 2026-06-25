@@ -46,29 +46,42 @@ def lines_from(report):
 
 
 def render(rows) -> str:
-    max_chars = max((len(t) for t, _ in rows), default=40)
+    max_chars = max([len(t) for t, _ in rows] + [len("$ leakproof demo")])
     width = int(PAD * 2 + max_chars * CHAR_W) + 24
-    height = int(HEADER + PAD * 2 + len(rows) * LINE_H)
+    n_text_rows = 1 + len(rows)  # the command line plus the output rows
+    height = int(HEADER + PAD * 2 + n_text_rows * LINE_H)
 
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">',
+        # Animation reveals each line; base opacity is 1, so it stays readable where
+        # SVG animation is disabled (the static fallback).
+        "<style>text{animation:fin .45s backwards}@keyframes fin{from{opacity:0}to{opacity:1}}</style>",
         f'<rect width="{width}" height="{height}" rx="10" fill="{BG}"/>',
         f'<rect width="{width}" height="{HEADER}" rx="10" fill="{BAR}"/>',
         f'<rect y="{HEADER - 10}" width="{width}" height="10" fill="{BAR}"/>',
         '<circle cx="20" cy="17" r="6" fill="#ff5f56"/>',
         '<circle cx="40" cy="17" r="6" fill="#ffbd2e"/>',
         '<circle cx="60" cy="17" r="6" fill="#27c93f"/>',
-        f'<text x="{width / 2}" y="22" fill="{DIM}" font-size="12" text-anchor="middle">'
-        'leakproof demo</text>',
+        f'<text x="{width / 2}" y="22" fill="{DIM}" font-size="12" text-anchor="middle" '
+        'style="animation:none">research-leakproof</text>',
     ]
+
     y = HEADER + PAD + FONT
+    out.append(
+        f'<text x="{PAD}" y="{y}" font-size="{FONT}" style="animation-delay:.1s">'
+        f'<tspan fill="{COLOR[Severity.OK]}">$</tspan>'
+        f'<tspan fill="{FG}"> leakproof demo</tspan></text>'
+    )
+    y += LINE_H
+    delay = 0.55
     for text, color in rows:
         if text:
             out.append(
                 f'<text x="{PAD}" y="{y}" fill="{color}" font-size="{FONT}" '
-                f'xml:space="preserve">{escape(text)}</text>'
+                f'xml:space="preserve" style="animation-delay:{delay:.2f}s">{escape(text)}</text>'
             )
+            delay += 0.18
         y += LINE_H
     out.append("</svg>")
     return "\n".join(out)
