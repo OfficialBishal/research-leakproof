@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "research-leakproof",
-  "displayName": "leakproof",
+  "displayName": "research-leakproof",
   "version": "0.1.0",
   "description": "Catch data leakage, inflated sample size, shape-collapse, and over-claimed metrics in any ML or research project, without leaving Claude Code.",
   "author": {

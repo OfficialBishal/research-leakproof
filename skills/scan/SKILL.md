@@ -10,7 +10,7 @@ allowed-tools: Bash, Read, Grep, Glob
 Run the static scanner over the target (default to the project if `$ARGUMENTS` is empty):
 
 ```bash
-PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python -m leakproof scan "$ARGUMENTS"
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python -m research_leakproof scan "$ARGUMENTS"
 ```
 
 Add `--json` for structured output, or `--fail-on error` to only fail CI on errors. The scanner reads source with Python's `ast` and never executes it, so it is safe to run anywhere.

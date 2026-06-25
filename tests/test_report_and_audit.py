@@ -1,8 +1,8 @@
 import json
 
-import leakproof
-from leakproof.demo import make_report
-from leakproof.finding import Severity
+import research_leakproof as leakproof
+from research_leakproof.demo import make_report
+from research_leakproof.finding import Severity
 
 
 def test_report_json_roundtrips():

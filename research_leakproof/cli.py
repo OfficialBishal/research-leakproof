@@ -1,4 +1,4 @@
-"""Command-line entry point: `leakproof scan <path>`, `leakproof demo`, `leakproof version`."""
+"""Command-line entry point: `research-leakproof scan <path>`, `research-leakproof demo`, `research-leakproof version`."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from .scanner import scan
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
-        prog="leakproof",
+        prog="research-leakproof",
         description="Catch data leakage and over-claimed results before a reviewer does.",
     )
     sub = parser.add_subparsers(dest="command")

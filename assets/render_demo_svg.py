@@ -1,7 +1,7 @@
 """Render the bundled demo report as a terminal-style SVG for the README.
 
 Run from the repo root:  python assets/render_demo_svg.py
-The output (assets/demo.svg) is generated from the real `leakproof demo` output, so it stays honest.
+The output (assets/demo.svg) is generated from the real `research-leakproof demo` output, so it stays honest.
 """
 
 from __future__ import annotations
@@ -12,8 +12,8 @@ from xml.sax.saxutils import escape
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from leakproof.demo import make_report  # noqa: E402
-from leakproof.finding import Severity  # noqa: E402
+from research_leakproof.demo import make_report  # noqa: E402
+from research_leakproof.finding import Severity  # noqa: E402
 
 COLOR = {
     Severity.ERROR: "#ff6b6b",
@@ -46,7 +46,7 @@ def lines_from(report):
 
 
 def render(rows) -> str:
-    max_chars = max([len(t) for t, _ in rows] + [len("$ leakproof demo")])
+    max_chars = max([len(t) for t, _ in rows] + [len("$ research-leakproof demo")])
     width = int(PAD * 2 + max_chars * CHAR_W) + 24
     n_text_rows = 1 + len(rows)  # the command line plus the output rows
     height = int(HEADER + PAD * 2 + n_text_rows * LINE_H)
@@ -71,7 +71,7 @@ def render(rows) -> str:
     out.append(
         f'<text x="{PAD}" y="{y}" font-size="{FONT}" style="animation-delay:.1s">'
         f'<tspan fill="{COLOR[Severity.OK]}">$</tspan>'
-        f'<tspan fill="{FG}"> leakproof demo</tspan></text>'
+        f'<tspan fill="{FG}"> research-leakproof demo</tspan></text>'
     )
     y += LINE_H
     delay = 0.55

@@ -1,5 +1,5 @@
-import leakproof
-from leakproof.finding import Severity
+import research_leakproof as leakproof
+from research_leakproof.finding import Severity
 
 LEAKY = """
 import numpy as np

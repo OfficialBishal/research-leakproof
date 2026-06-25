@@ -1,9 +1,9 @@
-"""leakproof - catch data leakage and over-claimed results in research code.
+"""research-leakproof - catch data leakage and over-claimed results in research code.
 
 Typical use:
 
-    import leakproof
-    report = leakproof.audit(X_train=Xtr, X_test=Xte, groups_train=gtr, groups_test=gte)
+    import research_leakproof as lp
+    report = lp.audit(X_train=Xtr, X_test=Xte, groups_train=gtr, groups_test=gte)
     print(report)
     if report.failed():
         raise SystemExit(1)

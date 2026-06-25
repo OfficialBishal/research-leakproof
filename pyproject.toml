@@ -28,10 +28,10 @@ Homepage = "https://github.com/OfficialBishal/research-leakproof"
 Source = "https://github.com/OfficialBishal/research-leakproof"
 
 [project.scripts]
-leakproof = "leakproof.cli:main"
+research-leakproof = "research_leakproof.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["leakproof*"]
+include = ["research_leakproof*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

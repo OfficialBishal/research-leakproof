@@ -6,7 +6,7 @@ plugin and as a small Python library, on any field's data.
 
 ![license](https://img.shields.io/badge/license-MIT-blue) ![python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-<p align="center"><img src="assets/demo.svg" alt="leakproof demo report" width="760"></p>
+<p align="center"><img src="assets/demo.svg" alt="research-leakproof demo report" width="760"></p>
 
 Experiment trackers (Weights & Biases, MLflow, DVC) record *what* you ran. They do not tell you the
 test set leaked into training, that your 14,000 "samples" are 500 rows copied 28 times, or that a
@@ -54,9 +54,9 @@ pip install git+https://github.com/OfficialBishal/research-leakproof.git
 ```
 
 ```python
-import leakproof
+import research_leakproof as lp
 
-report = leakproof.audit(
+report = lp.audit(
     X_train=X_train, X_test=X_test,
     groups_train=g_train, groups_test=g_test,
     predictions=preds, targets=y_true, units=unit_ids,
@@ -76,13 +76,13 @@ if report.failed():           # true if any error remains
 Scan source without running it:
 
 ```bash
-leakproof scan path/to/project        # or: python -m leakproof scan .
-leakproof demo                        # run a built-in leaky example
+research-leakproof scan path/to/project   # or: python -m research_leakproof scan .
+research-leakproof demo                    # run a built-in leaky example
 ```
 
 ## Example
 
-`leakproof demo` runs a small experiment with planted problems:
+`research-leakproof demo` runs a small experiment with planted problems:
 
 ```
 [x] split_leakage: 2 test row(s) are identical to training rows (4.8% of test)
@@ -115,10 +115,10 @@ Each finding prints the number behind it and a one-line fix (trimmed above for b
 A check is conservative, but if one fires on something you have justified, name it:
 
 ```python
-leakproof.audit(..., suppress=["temporal_leakage"])
+lp.audit(..., suppress=["temporal_leakage"])
 ```
 
-or add a `leakproof.toml` to the project:
+or add a `research-leakproof.toml` to the project:
 
 ```toml
 [suppress]
@@ -135,10 +135,10 @@ Pre-commit (`.pre-commit-config.yaml`):
 - repo: https://github.com/OfficialBishal/research-leakproof
   rev: v0.1.0
   hooks:
-    - id: leakproof-scan
+    - id: research-leakproof-scan
 ```
 
-Or copy `.github/workflows/ci.yml` to run `pytest` and `leakproof scan` on every push.
+Or copy `.github/workflows/ci.yml` to run `pytest` and `research-leakproof scan` on every push.
 
 ## Why not just an experiment tracker?
 

@@ -20,12 +20,12 @@ For each claim, find the artifact it came from (a predictions file, a metrics JS
 Then run the rigor checks on the reported numbers with the bundled engine:
 
 ```bash
-PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python /tmp/leakproof_verify.py
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python /tmp/research_leakproof_verify.py
 ```
 
 ```python
-import leakproof
-report = leakproof.audit(
+import research_leakproof as lp
+report = lp.audit(
     metrics={...},            # every metric the document reports
     n_test=...,               # test-set size, if stated
     effect_size=...,          # the headline effect as a correlation

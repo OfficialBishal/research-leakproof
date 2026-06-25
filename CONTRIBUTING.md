@@ -13,7 +13,7 @@ pytest
 
 ## Adding a check
 
-Each check is a single module under `leakproof/checks/` with one function:
+Each check is a single module under `research_leakproof/checks/` with one function:
 
 ```python
 def run(ctx):
@@ -23,7 +23,7 @@ def run(ctx):
     return finding.warn(CHECK, "short title", "what was found", evidence={...}, fix="how to fix")
 ```
 
-Then register it in `leakproof/checks/__init__.py`. Every check needs two tests in `tests/`: one
+Then register it in `research_leakproof/checks/__init__.py`. Every check needs two tests in `tests/`: one
 where it fires on a leaky fixture and one where it stays silent on a clean fixture. Checks should be
 conservative — a false positive that cannot be suppressed is worse than a missed edge case.
 

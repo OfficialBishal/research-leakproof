@@ -7,7 +7,7 @@
 <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
 <circle cx="60" cy="17" r="6" fill="#27c93f"/>
 <text x="405.5" y="22" fill="#8b949e" font-size="12" text-anchor="middle" style="animation:none">research-leakproof</text>
-<text x="18" y="65" font-size="13" style="animation-delay:.1s"><tspan fill="#7ee787">$</tspan><tspan fill="#c9d1d9"> leakproof demo</tspan></text>
+<text x="18" y="65" font-size="13" style="animation-delay:.1s"><tspan fill="#7ee787">$</tspan><tspan fill="#c9d1d9"> research-leakproof demo</tspan></text>
 <text x="18" y="86" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.55s">[x] split_leakage: 2 test row(s) are identical to training rows (4.8% of test)</text>
 <text x="18" y="107" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.73s">[x] group_leakage: 1 group(s) appear in both train and test</text>
 <text x="18" y="128" fill="#ff6b6b" font-size="13" xml:space="preserve" style="animation-delay:0.91s">[x] shape_collapse: Aggregate r=0.95, but predictions barely vary within a unit</text>

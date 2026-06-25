@@ -1,7 +1,7 @@
 import numpy as np
 
-import leakproof
-from leakproof.finding import Severity
+import research_leakproof as leakproof
+from research_leakproof.finding import Severity
 
 
 def sev(report, check):

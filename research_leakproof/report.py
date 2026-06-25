@@ -39,7 +39,7 @@ class Report:
         return json.dumps(self.to_dict(), indent=indent)
 
     def to_text(self) -> str:
-        lines = ["leakproof report", "=" * 40]
+        lines = ["research-leakproof report", "=" * 40]
         for sev in _ORDER:
             for f in [x for x in self.findings if x.severity == sev]:
                 head = f"[{f.severity.symbol}] {f.check}: {f.title}"
@@ -60,7 +60,7 @@ class Report:
     def to_markdown(self) -> str:
         c = self.counts()
         lines = [
-            "## leakproof report",
+            "## research-leakproof report",
             "",
             f"**{c['error']} error · {c['warn']} warn · {c['info']} info · {c['ok']} ok**",
             "",
@@ -74,7 +74,7 @@ class Report:
 
     def integrity_block(self) -> str:
         """A compact pass/fail block to paste into a README or paper appendix."""
-        lines = ["<!-- leakproof integrity block -->", "Research integrity checks:"]
+        lines = ["<!-- research-leakproof integrity block -->", "Research integrity checks:"]
         for f in self.findings:
             mark = "PASS" if f.severity == Severity.OK else f.severity.value.upper()
             lines.append(f"- [{mark}] {f.check}: {f.title}")

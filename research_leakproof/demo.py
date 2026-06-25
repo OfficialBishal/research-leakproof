@@ -1,4 +1,4 @@
-"""A self-contained leaky experiment, so `leakproof demo` shows the tool finding real problems."""
+"""A self-contained leaky experiment, so `research-leakproof demo` shows the tool finding real problems."""
 
 from __future__ import annotations
 

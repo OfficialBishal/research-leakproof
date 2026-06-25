@@ -7,7 +7,7 @@ allowed-tools: Bash, Read, Grep, Glob, Write, Edit
 
 # Audit an experiment for leakage and over-claimed results
 
-Run the `leakproof` engine over whatever the user has, interpret the findings, and propose concrete fixes. The engine is deterministic Python; your job is to locate the right inputs and explain the results.
+Run the `research-leakproof` engine over whatever the user has, interpret the findings, and propose concrete fixes. The engine is deterministic Python; your job is to locate the right inputs and explain the results.
 
 ## 1. Find the inputs
 
@@ -28,19 +28,19 @@ Arrays may be `.npy`/`.npz`, CSV/parquet, or already in a script. Load them howe
 
 ## 2. Run the audit
 
-Write a short script that imports `leakproof` and calls `audit(...)` with the inputs you gathered, then run it with the bundled engine on the path:
+Write a short script that imports `research_leakproof` and calls `audit(...)` with the inputs you gathered, then run it with the bundled engine on the path:
 
 ```bash
-PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python /tmp/leakproof_audit.py
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python /tmp/research_leakproof_audit.py
 ```
 
 The script body:
 
 ```python
 import numpy as np
-import leakproof
+import research_leakproof as lp
 
-report = leakproof.audit(
+report = lp.audit(
     # pass only what you actually have, e.g.:
     X_train=X_train, X_test=X_test,
     groups_train=g_train, groups_test=g_test,
@@ -59,5 +59,5 @@ If the user prefers a permanent install instead of the bundled path: `pip instal
 
 - Lead with the count line (`N error / N warn / ...`) and whether it would fail CI (`report.failed()` is true when any error remains).
 - For every non-OK finding, state the check, the number behind it (from `evidence`), and the one-line `fix`. Do not bury an `error` under passing checks.
-- Be specific and non-accusatory: these are guardrails, not verdicts. If a finding is a known false positive, show how to suppress it (`suppress=["check_id"]` in the call, or a `leakproof.toml` with a `[suppress]` table).
+- Be specific and non-accusatory: these are guardrails, not verdicts. If a finding is a known false positive, show how to suppress it (`suppress=["check_id"]` in the call, or a `research-leakproof.toml` with a `[suppress]` table).
 - Offer to paste `report.integrity_block()` into the project's README, or to add the audit to CI / pre-commit so it runs on every change.
